@@ -1,34 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="eng">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Social links profile</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Links Profile - Jessica Randall</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
 </head>
 <body>
 
-  Jessica Randall
-  London, United Kingdom
-  "Front-end developer and avid reader."
+    <main class="container">
+        <div class="profile-card">
+            <img src="\design\z5940729986510_9ab0a58fbf84568f0aa920000e5ae243.jpg" alt="Duc Nguyen's avatar" class="avatar">
+            
+            <h1 class="name">Nguyen Luc Duc</h1>
+            <p class="location">Ho Chi Minh, Viet Nam</p>
+            
+            <p class="bio">"Front-end developer and avid reader."</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/Nglucduc" class="link-btn">GitHub</a>
+                <a href="#" class="link-btn">Frontend Mentor</a>
+                <a href="https://www.linkedin.com/in/%C4%91%E1%BB%A9c-nguy%E1%BB%85n-542128325/" class="link-btn">LinkedIn</a>
+                <a href="#" class="link-btn">Twitter</a>
+                <a href="#" class="link-btn">Instagram</a>
+            </div>
+        </div>
+    </main>
 
-  GitHub
-  Frontend Mentor
-  LinkedIn
-  Twitter
-  Instagram
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
+
+
+
+<style>
+/* --- CSS Custom Properties (Variables) --- */
+:root {
+    --green: hsl(75, 94%, 57%);
+    --white: hsl(0, 0%, 100%);
+    --grey-700: hsl(0, 0%, 20%);
+    --grey-800: hsl(0, 0%, 12%);
+    --grey-900: hsl(0, 0%, 8%);
+    --font-family: 'Inter', sans-serif;
+}
+
+/* --- Reset & Base Styles --- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--white); 
+    font-size: 14px;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--grey-900);
+    width: 80vw;
+    height: 80vh;
+    border-radius: 20px;
+    display: grid;
+    place-content: center;
+}
+
+/* --- Profile Card Styles (Đã thay đổi kích thước) --- */
+.profile-card {
+    background-color: var(--grey-800);
+    /* Thay đổi: Giảm max-width để card nhỏ hơn */
+    max-width: 300px;
+    /* Thay đổi: Giảm padding để thu nhỏ khoảng cách bên trong */
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    color: var(--white);
+}
+
+.avatar {
+    /* Thay đổi: Giảm kích thước ảnh đại diện */
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    /* Thay đổi: Giảm margin dưới */
+    margin-bottom: 20px;
+}
+
+.name {
+    /* Thay đổi: Giảm kích thước font */
+    font-size: 1.3rem;
+    font-weight: 700;
+    /* Thay đổi: Giảm margin dưới */
+    margin-bottom: 6px;
+}
+
+.location {
+    color: var(--green);
+    font-weight: 600;
+    /* Thay đổi: Giảm margin dưới */
+    margin-bottom: 18px;
+}
+
+.bio {
+    font-weight: 400;
+    /* Thay đổi: Giảm margin dưới */
+    margin-bottom: 18px;
+}
+
+/* --- Social Links Styles (Đã thay đổi kích thước) --- */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    /* Thay đổi: Giảm khoảng cách giữa các nút */
+    gap: 12px;
+}
+
+.link-btn {
+    display: block;
+    width: 100%;
+    background-color: var(--grey-700);
+    color: var(--white);
+    text-decoration: none;
+    /* Thay đổi: Giảm padding để nút nhỏ hơn */
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.link-btn:hover {
+    background-color: var(--green);
+    color: var(--grey-900);
+    cursor: pointer;
+}
+
+/* --- Responsive for Mobile --- */
+@media (max-width: 768px) {
+    .container {
+        width: 90vw;
+        height: 90vh;
+    }
+    .profile-card {
+        /* Thay đổi: Giảm padding cho màn hình mobile */
+        padding: 20px;
+    }
+}
+</style>
